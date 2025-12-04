@@ -41,3 +41,14 @@ To build the project run:
 ```bash
 ng build
 ```
+
+
+## Konténerizálás (Docker)
+
+### Image Build
+
+Az image buildeléséhez futtasd a következő parancsot a Dockerfile-t tartalmazó mappában:
+
+```bash
+docker build -t hello-devops:v1 .
+```
