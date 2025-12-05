@@ -42,7 +42,6 @@ To build the project run:
 ng build
 ```
 
-
 ## Konténerizálás (Docker)
 
 ### Image Build
@@ -52,3 +51,28 @@ Az image buildeléséhez futtasd a következő parancsot a Dockerfile-t tartalma
 ```bash
 docker build -t hello-devops:v1 .
 ```
+
+### Image Run
+
+Az image futtatáshoz futtasd a következő parancsot a Dockerfile-t tartalmazó mappában:
+
+```bash
+docker run -d -p 8080:80 hello-devops:v1
+```
+
+## CI Pipeline és Registry (Kötelezően Választandó - Opció 2)
+
+A CI pipeline a **GitHub Actions**-t használja. Minden `main` branch-re történő push automatikusan elindítja a workflow-t.
+
+### Registry Információ
+
+* **Registry:** Docker Hub
+* **Image Név/URL:** `DOCKER_USERNAME/hello-devops` (Cseréld le a DOCKER_USERNAME-et a sajátodra!)
+
+### Image Lehúzása és Futtatása
+
+Bárki, aki rendelkezik Dockerrel, elindíthatja a konténert a registryből a következő parancsokkal:
+
+1. **Image lehúzása:**
+```bash
+docker pull DOCKER_USERNAME/hello-devops:latest
