@@ -60,14 +60,14 @@ Az image futtatáshoz futtasd a következő parancsot a Dockerfile-t tartalmazó
 docker run -d -p 8080:80 hello-devops:v1
 ```
 
-## CI Pipeline és Registry (Kötelezően Választandó - Opció 2)
+## CI Pipeline és Registry
 
 A CI pipeline a **GitHub Actions**-t használja. Minden `main` branch-re történő push automatikusan elindítja a workflow-t.
 
 ### Registry Információ
 
 * **Registry:** Docker Hub
-* **Image Név/URL:** `DOCKER_USERNAME/hello-devops` (Cseréld le a DOCKER_USERNAME-et a sajátodra!)
+* **Image Név/URL:** `ccvik100/hello-devops`
 
 ### Image Lehúzása és Futtatása
 
@@ -75,4 +75,4 @@ Bárki, aki rendelkezik Dockerrel, elindíthatja a konténert a registryből a k
 
 1. **Image lehúzása:**
 ```bash
-docker pull DOCKER_USERNAME/hello-devops:latest
+docker pull ccvik100/hello-devops:latest
